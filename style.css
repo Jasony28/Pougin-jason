@@ -1,0 +1,280 @@
+/* ==========================================================================
+   1. VARIABLES & CONFIGURATION GLOBALE
+   ========================================================================== */
+
+:root {
+    /* Palette de couleurs - Thème Clair */
+    --couleur-principale: hsl(210, 100%, 50%);
+    --couleur-fond-light: hsl(0, 0%, 100%);
+    --couleur-secondaire-light: hsl(210, 30%, 98%);
+    --couleur-texte-light: hsl(210, 10%, 20%);
+    --couleur-ombre: hsl(210, 30%, 85%);
+
+    /* Palette de couleurs - Thème Sombre */
+    --couleur-fond-dark: hsl(210, 15%, 12%);
+    --couleur-secondaire-dark: hsl(210, 15%, 18%);
+    --couleur-texte-dark: hsl(210, 15%, 88%);
+    
+    /* Variables de Thème (appliquées par défaut au thème clair) */
+    --bg-color: var(--couleur-fond-light);
+    --text-color: var(--couleur-texte-light);
+    --secondary-bg-color: var(--couleur-secondaire-light);
+    --card-bg: var(--couleur-fond-light);
+    --card-border: var(--couleur-ombre);
+    --nav-bg: hsla(0, 0%, 100%, 0.8);
+
+    /* Configuration */
+    --police-principale: 'Poppins', sans-serif;
+    --border-radius: 12px;
+    --transition-rapide: 0.2s ease-in-out;
+    --transition-lente: 0.4s ease-in-out;
+}
+
+body.dark-mode {
+    --bg-color: var(--couleur-fond-dark);
+    --text-color: var(--couleur-texte-dark);
+    --secondary-bg-color: var(--couleur-secondaire-dark);
+    --card-bg: var(--couleur-secondaire-dark);
+    --card-border: hsl(210, 15%, 25%);
+    --nav-bg: hsla(210, 15%, 12%, 0.7);
+}
+
+
+/* ==========================================================================
+   2. STYLES DE BASE & RESET
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+body {
+    font-family: var(--police-principale);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color var(--transition-rapide), color var(--transition-rapide);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--secondary-bg-color); }
+::-webkit-scrollbar-thumb { background: var(--couleur-principale); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(210, 100%, 60%); }
+
+
+/* ==========================================================================
+   3. TYPOGRAPHIE FLUIDE & STYLES DE TEXTE
+   ========================================================================== */
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 4rem; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+section {
+    padding: clamp(4rem, 10vh, 8rem) 0;
+}
+
+
+/* ==========================================================================
+   4. COMPOSANTS (Boutons, Cartes, etc.)
+   ========================================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-rapide);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px hsla(210, 100%, 50%, 0.4);
+}
+
+.btn-primary {
+    background-color: var(--couleur-principale);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--couleur-principale);
+    border: 2px solid var(--couleur-principale);
+}
+
+.btn-secondary:hover {
+    background-color: var(--couleur-principale);
+    color: white;
+}
+
+.project-card, .service-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px -10px var(--couleur-ombre);
+    overflow: hidden;
+    transition: all var(--transition-lente);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -10px var(--couleur-ombre);
+    border-color: var(--couleur-principale);
+}
+
+.project-card {
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1.5rem 1rem 1rem;
+}
+
+.service-card {
+    padding: 2.5rem;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   5. SECTIONS DE LA PAGE
+   ========================================================================== */
+
+.navbar {
+    padding: 1rem 0;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: background-color var(--transition-rapide);
+}
+
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--text-color); text-decoration: none; }
+.nav-menu { list-style: none; display: flex; align-items: center; gap: 1.5rem; }
+.nav-menu a { text-decoration: none; color: var(--text-color); font-weight: 600; }
+
+.theme-switch-wrapper { display: flex; align-items: center; }
+.theme-switch { display: inline-block; height: 24px; position: relative; width: 48px; }
+.theme-switch input { display: none; }
+.slider { background-color: #ccc; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; }
+.slider:before { background-color: #fff; bottom: 4px; content: ""; height: 16px; left: 4px; position: absolute; transition: .4s; width: 16px; }
+input:checked + .slider { background-color: var(--couleur-principale); }
+input:checked + .slider:before { transform: translateX(24px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+.hero { background-color: var(--secondary-bg-color); padding: 5rem 0; }
+.hero-container { display: flex; align-items: center; gap: 3rem; }
+.hero-avatar img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--couleur-principale); box-shadow: 0 0 30px -10px var(--couleur-principale); }
+.hero-text h1 { background: linear-gradient(90deg, var(--couleur-principale), var(--text-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-text p { font-size: clamp(1rem, 1.5vw, 1.1rem); margin-bottom: 2rem; }
+
+.projects-grid, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.about-container { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.about-avatar { flex-shrink: 0; }
+.about-avatar img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
+
+.contact { background-color: var(--secondary-bg-color); }
+.contact-form { max-width: 600px; margin: 2rem auto 0; text-align: left; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid var(--card-border); background-color: var(--bg-color); color: var(--text-color); font-family: var(--police-principale); transition: all var(--transition-rapide); }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--couleur-principale); box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.2); }
+.contact-form .btn { width: 100%; border: none; font-size: 1rem; }
+
+.footer { background-color: var(--secondary-bg-color); text-align: center; padding: 2rem 0; border-top: 1px solid var(--card-border); }
+
+
+/* ==========================================================================
+   6. ANIMATIONS & RESPONSIVE
+   ========================================================================== */
+
+.project-card, .service-card, .about-container { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color var(--transition-rapide), border-color var(--transition-rapide); }
+.project-card.visible, .service-card.visible, .about-container.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .hero-container, .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hamburger { display: block; cursor: pointer; z-index: 101; }
+    .hamburger .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-color); transition: all 0.3s ease-in-out; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .nav-menu { position: fixed; left: -100%; top: 0; flex-direction: column; justify-content: center; background-color: var(--bg-color); width: 100%; height: 100vh; text-align: center; transition: 0.3s; gap: 2rem; }
+    .nav-menu.active { left: 0; }
+    .nav-menu li { padding: 0.5rem 0; }
+    .nav-menu li a { font-size: 1.5rem; }
+    .nav-menu li:last-child { position: absolute; bottom: 5rem; left: 50%; transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   7. NAVIGATION DYNAMIQUE (ACTIVE LINK)
+   ========================================================================== */
+
+.nav-menu a {
+    position: relative;
+    transition: color var(--transition-rapide);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--couleur-principale);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-lente);
+}
+
+.nav-menu a.active-link {
+    color: var(--couleur-principale);
+}
+
+.nav-menu a.active-link::after {
+    transform: scaleX(1);
+}
