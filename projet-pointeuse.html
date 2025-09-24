@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Pointeuse PWA - Jason Pougin</title>
+    
+    <meta name="description" content="Étude de cas de la création d'une application web progressive (PWA) pour la gestion du temps, de la planification et de la facturation.">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Jason P.</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#projets">Projets</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" aria-label="Basculer le thème sombre"/>
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="project-header">
+            <div class="container">
+                <h1>Application "Pointeuse LPF"</h1>
+                <p>Une application web progressive (PWA) pour la gestion complète du temps de travail et des chantiers.</p>
+            </div>
+        </header>
+
+        <section class="project-content">
+            <div class="container">
+                
+                <div class="project-details-grid">
+                    <div class="project-description">
+                        <h2>Le Projet</h2>
+                        <p>
+                            Le projet "Pointeuse LPF" est né du besoin de remplacer un système de suivi manuel par une solution numérique centralisée et fiable. L'objectif était de développer une application complète pour gérer le temps de travail, la planification des chantiers et la facturation pour une équipe d'employés.
+                        </p>
+                        <p>
+                            Développée comme une <strong>Progressive Web App (PWA)</strong>, l'application offre une expérience fluide sur mobile et ordinateur, avec des capacités hors ligne. Elle automatise le pointage, centralise les informations des chantiers et simplifie considérablement la gestion administrative.
+                        </p>
+
+                        <h3 style="margin-top: 2rem;">Fonctionnalités Clés :</h3>
+                        <ul>
+                            <li><strong>Double Interface :</strong> Des vues distinctes et sécurisées pour les <strong>Employés</strong> (pointage, planning) et les <strong>Administrateurs</strong> (gestion totale, facturation).</li>
+                            <li><strong>Système de Pointage en Direct :</strong> Un tracker en temps réel avec chronomètre, fonctions de pause/reprise et sélection des chantiers.</li>
+                            <li><strong>Module de Planification Avancé :</strong> Interface visuelle de type "drag-and-drop" pour assigner les équipes aux chantiers.</li>
+                            <li><strong>Gestion Centralisée :</strong> Modules dédiés pour la gestion des chantiers, des équipes, des contrats et des tarifs.</li>
+                            <li><strong>Génération Automatique de Factures :</strong> Outil de création de factures et de rapports PDF basé sur les heures pointées et les taux de facturation.</li>
+                            <li><strong>Personnalisation et UX :</strong> Système de thèmes pour customiser l'interface et mode "confidentiel" pour l'admin.</li>
+                        </ul>
+                    </div>
+                    <aside class="project-meta">
+                        <h3>Informations</h3>
+                        <ul>
+                            <li><strong>Client:</strong> Projet Interne</li>
+                            <li><strong>Date:</strong> 2025</li>
+                            <li><strong>Technologies:</strong></li>
+                            <li>- JavaScript (sans framework)</li>
+                            <li>- Firebase (Firestore, Auth)</li>
+                            <li>- Tailwind CSS</li>
+                            <li>- PWA (Service Workers)</li>
+                            <li>- jspdf, Chart.js, Flowbite</li>
+                        </ul>
+                        <p><strong>Projet non public.</strong></p>
+                    </aside>
+                </div>
+
+                <div class="project-gallery">
+                    <h2>Galerie</h2>
+                    <div class="gallery-container" id="project-gallery">
+                        <div class="gallery-main-image">
+                            <img src="Photo/Capture d'écran 2025-09-24 184439.png" alt="Vue principale de la galerie">
+                            <button class="gallery-btn prev-btn" aria-label="Image précédente">&#10094;</button>
+                            <button class="gallery-btn next-btn" aria-label="Image suivante">&#10095;</button>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <img src="Photo/Capture d'écran 2025-09-24 184439.png" alt="Miniature 1" class="thumbnail" data-index="0">
+                            <img src="Photo/Capture d'écran 2025-09-24 184534.png" alt="Miniature 2" class="thumbnail" data-index="1">
+                            <img src="Photo/Capture d'écran 2025-09-24 184732.png" alt="Miniature 3" class="thumbnail" data-index="2">
+                            <img src="Photo/Capture d'écran 2025-09-24 184742.png" alt="Miniature 4" class="thumbnail" data-index="3">
+                            <img src="Photo/Capture d'écran 2025-09-24 184752.png" alt="Miniature 5" class="thumbnail" data-index="4">
+                            <img src="Photo/Capture d'écran 2025-09-24 184801.png" alt="Miniature 6" class="thumbnail" data-index="5">
+                            <img src="Photo/Capture d'écran 2025-09-24 184818.png" alt="Miniature 7" class="thumbnail" data-index="6">
+                            <img src="Photo/Capture d'écran 2025-09-24 184834.png" alt="Miniature 8" class="thumbnail" data-index="7">
+                            <img src="Photo/Capture d'écran 2025-09-24 184845.png" alt="Miniature 9" class="thumbnail" data-index="8">
+                            <img src="Photo/Capture d'écran 2025-09-24 184856.png" alt="Miniature 10" class="thumbnail" data-index="9">
+                            <img src="Photo/Capture d'écran 2025-09-24 184905.png" alt="Miniature 11" class="thumbnail" data-index="10">
+                            <img src="Photo/Capture d'écran 2025-09-24 184921.png" alt="Miniature 12" class="thumbnail" data-index="11">
+                            <img src="Photo/Capture d'écran 2025-09-24 184957.png" alt="Miniature 13" class="thumbnail" data-index="12">
+                            <img src="Photo/Capture d'écran 2025-09-24 185004.png" alt="Miniature 14" class="thumbnail" data-index="13">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <small>&copy; 2025 Jason Pougin. Tous droits réservés.</small>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

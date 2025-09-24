@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet JP-CleanAuto - Jason Pougin</title>
+    
+    <meta name="description" content="Découvrez le projet de création de site vitrine pour JP-CleanAuto, réalisé par Jason Pougin.">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Jason P.</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#projets">Projets</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" aria-label="Basculer le thème sombre"/>
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="project-header">
+            <div class="container">
+                <h1>Site Vitrine - JP-CleanAuto</h1>
+                <p>Un site web moderne et performant pour un service de nettoyage automobile.</p>
+            </div>
+        </header>
+
+        <section class="project-content">
+            <div class="container">
+                <img src="Photo/jpclean.png" alt="Vue d'ensemble du site JP-CleanAuto" class="project-main-image">
+
+                <div class="project-details-grid">
+                    <div class="project-description">
+                        <h2>Le Projet</h2>
+                        <p>
+                            JP-CleanAuto avait besoin d'une présence en ligne professionnelle pour présenter ses services, ses tarifs et permettre aux clients de prendre rendez-vous facilement. L'objectif était de créer un site vitrine simple, élégant et optimisé pour les mobiles.
+                        </p>
+                        <p>
+                            J'ai développé une interface claire qui met en avant les réalisations via une galerie "avant/après" et intègre un formulaire de contact direct. Le design a été pensé pour refléter la qualité et le sérieux de l'entreprise.
+                        </p>
+                    </div>
+                    <aside class="project-meta">
+                        <h3>Informations</h3>
+                        <ul>
+                            <li><strong>Client:</strong> JP-CleanAuto</li>
+                            <li><strong>Date:</strong> 2024</li>
+                            <li><strong>Technologies:</strong></li>
+                            <li>- HTML5</li>
+                            <li>- CSS3 (Flexbox, Grid)</li>
+                            <li>- JavaScript</li>
+                        </ul>
+                        <a href="https://jasony28.github.io/V2-JP-CleanAuto/" target="_blank" class="btn btn-primary">Visiter le site</a>
+                    </aside>
+                </div>
+
+                <div class="project-gallery">
+                    <h2>Galerie</h2>
+                    <div class="gallery-grid">
+                        <img src="Photo/jpclean_detail_1.jpg" alt="Description de l'image 1" loading="lazy">
+                        <img src="Photo/jpclean_detail_2.jpg" alt="Description de l'image 2" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <small>&copy; 2025 Jason Pougin. Tous droits réservés.</small>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
